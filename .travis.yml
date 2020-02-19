@@ -4,7 +4,7 @@ language: python
 python: 
   - "3.6"
 
-# Tell travice what service the app will be using
+# Tell travis what service the app will be using
 services: 
   - docker
 
