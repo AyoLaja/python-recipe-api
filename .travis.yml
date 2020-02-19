@@ -2,7 +2,7 @@
 # Specify the version of python. Travis will run docker image which has the right version of python
 language: python
 python: 
-  -"3.6"
+  - "3.6"
 
 # Tell travice what service the app will be using
 services: 
