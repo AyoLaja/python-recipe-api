@@ -1,0 +1,18 @@
+# Configuration for all the services that make up the project
+version: "3"
+
+# Define services that make up application
+# service contains app, Within app the the build section sets the context , (current directory the app runs from)
+# mapping project from port 8000 on our host ot 8000 on the docer image
+# volume allows for retriving of updates make in roject into the docker image in real time. When changes occur in the project it will be automatically updated in the container and wont need to restart docker to get changes into effect 
+# command is used to run app in the docker container
+services: 
+  app:
+    build:
+      context: .
+    ports: 
+      - "8000:8000"
+    volumes: 
+      - ./app:/app
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
