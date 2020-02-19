@@ -1,0 +1,15 @@
+# Define langiage travis should expect
+# Specify the version of python. Travis will run docker image which has the right version of python
+language: python
+python: 
+  -"3.6"
+
+# Tell travice what service the app will be using
+services: 
+  - docker
+
+# Script travis runs before execution of any commands
+before_script: pip install docker-compose 
+
+script: 
+  - docker-compose run app sh -c "python manage.py test && flake8"
